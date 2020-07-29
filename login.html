@@ -24,17 +24,18 @@
                 <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
                     autocomplete="off" class="layui-input" id="password">
                 <button type="submit" class="layui-btn layui-btn-normal" id="loginBtn">登陆</button>
-
+                <span class="tips" id="tip"></span>
                 <a href="javascript:;" class="toregister" id="toregister">去注册</a>
             </form>
             <form action="" id="register">
-                <input type="text" name="regusername" required lay-verify="required" placeholder="请输入用户名"
-                    autocomplete="off" class="layui-input" id="username">
-                <input type="password" name="regpassword" required lay-verify="required" placeholder="请输入密码"
-                    autocomplete="off" class="layui-input" id="regpassword">
+                <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                    autocomplete="off" class="layui-input" id="username1">
+                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                    autocomplete="off" class="layui-input" id="password1">
                 <input type="password" required lay-verify="required" placeholder="请再次输入密码" autocomplete="off"
-                    class="layui-input" id="regpassword2">
-                <button type="submit" class="layui-btn layui-btn-normal" id="loginBtn">注册</button>
+                    class="layui-input" id="password2">
+                <span class="tips" id="tips"></span>
+                <button type="submit" class="layui-btn layui-btn-normal" id="registerBtn">注册</button>
 
                 <a href="javascript:;" class="tologin" id="tologin">去登陆</a>
             </form>

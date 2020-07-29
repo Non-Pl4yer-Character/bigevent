@@ -34,3 +34,10 @@ body {
 #register {
     display: none;
 }
+
+.tips {
+    display: block;
+    font-size: 12px;
+    color:red;
+    margin-left: 40px;
+}
