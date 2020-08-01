@@ -30,7 +30,6 @@ function getUserInfo() {
         url: '/my/userinfo',
 
         success: function (res) {
-            console.log(res);
             if (res.status == 0) {
                 getUserPic(res.data)
             } else {

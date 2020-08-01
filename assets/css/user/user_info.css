@@ -1,0 +1,11 @@
+body {
+    padding: 30px;
+    background-color: #ececec;
+}
+
+.layui-card {
+    background-color: #fff;
+}
+.layui-input {
+    width: 400px;
+}
