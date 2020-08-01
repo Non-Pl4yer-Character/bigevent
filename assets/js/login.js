@@ -26,9 +26,7 @@ $(function () {
 
 
 
-    $.ajaxPrefilter(function (option) {
-        option.url = 'http://ajax.frontend.itheima.net' + option.url
-    })
+
     // 注册功能请求
     $register.submit(function (e) {
         e.preventDefault()
