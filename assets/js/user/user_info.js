@@ -41,6 +41,7 @@ $(function () {
 
 })
 
+
 function initUserInfo() {
     $.ajax({
         method: 'get',

@@ -1,0 +1,30 @@
+body {
+    padding: 30px;
+    background-color: #ececec;
+}
+
+.layui-table tbody tr td:nth-child(1),.layui-table tbody tr td:nth-child(2){
+    width: 40%;
+}
+.layui-table tbody tr td:nth-child(3) {
+    width: 20%;
+}
+
+.layui-table .layui-btn {
+    height: 30px;
+    line-height: 30px;
+    padding:0 10px;
+}
+#btnAddCate {
+    margin-top: 6px;
+    float: right;
+}
+.layui-input {
+    width: 80%;
+}
+#form-tan {
+    padding: 10px;
+}
+.layui-form-item {
+    margin-top: 30px;
+}

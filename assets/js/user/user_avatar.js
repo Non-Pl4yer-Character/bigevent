@@ -23,13 +23,10 @@ $(function () {
 
         // 提交
         $('#confirm').click(function () {
-            console.log(123);
             const dataUrl = $img.cropper('getCroppedCanvas', { width: 100, height: 100 }).toDataURL('image/png')
-            console.log(dataUrl);
             $.ajax({
                 method: 'post',
                 url: '/my/update/avatar',
-                // dataType: 'jsonp',
                 data: { avatar: dataUrl },
                 success: function (res) {
                     console.log(res);
