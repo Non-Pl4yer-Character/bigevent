@@ -1,3 +1,12 @@
+let state = '已发布'
+let getAjax
+
+function noSameBtn(url) {
+    return function (callback) {
+        callback(url)
+    }
+}
+
 $(function () {
 
     initCate()
@@ -52,11 +61,16 @@ $(function () {
 
 
     // 表单上传
-    let state = '已发布'
     $('#caogao').click(function () {
         state = '草稿'
+        getAjax = noSameBtn('/my/article/add')
 
     })
+    $('#fabu').click(function () {
+        state = '已发布'
+        getAjax = noSameBtn('/my/article/add')
+    })
+
     $('#form').submit(function (e) {
         e.preventDefault()
         const fd = new FormData(this)
@@ -65,22 +79,30 @@ $(function () {
         $img.cropper('getCroppedCanvas', { width: 400, height: 200 }).toBlob(function (blob) {
             fd.append('cover_img', blob)
 
-            $.ajax({
-                method: 'post',
-                url: '/my/article/add',
-                data: fd,
-                contentType: false,
-                processData: false,
-                success: function (res) {
-                    if (res.status == 1) {
-                        return layer.msg(res.message)
-
-                    }
-                    window.parent.document.querySelector('#a2').className = 'layui-this'
-                    window.parent.document.querySelector('#a3').className = ''
-                    location.href = '/article/art_list.html'
+            getAjax(function (url) {
+                console.log(url);
+                if (url.indexOf('/add') != -1) {
+                    fd.delete('Id')
                 }
+                $.ajax({
+                    method: 'post',
+                    url: url,
+                    data: fd,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        console.log(res);
+                        if (res.status == 1) {
+                            return layer.msg(res.message)
+
+                        }
+                        window.parent.document.querySelector('#a2').className = 'layui-this'
+                        window.parent.document.querySelector('#a3').className = ''
+                        location.href = '/article/art_list.html'
+                    }
+                })
             })
+
 
             console.log(...fd);
 

@@ -65,7 +65,7 @@
             <td>{{$value.cate_name}}</td>
             <td>{{$value.pub_date|dateFormat}}</td>
             <td>{{$value.state}}</td>
-            <td><button class="layui-btn edit" >编辑</button>
+            <td><a href="/article/art_pub.html?Id={{$value.Id}}" class="layui-btn edit" >编辑</a>
                 <button class="layui-btn layui-btn-danger del" data-id="{{$value.Id}}">删除</button></td>
         </tr>
         {{/each}}

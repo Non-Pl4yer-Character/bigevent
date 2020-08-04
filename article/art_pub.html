@@ -18,7 +18,9 @@
     <div class="layui-card">
         <div class="layui-card-header">发布文章</div>
         <div class="layui-card-body">
-            <form class="layui-form" action="" id="form">
+            <form class="layui-form" action="" lay-filter="formInfo" id="form">
+                <input type="hidden" id="Id" name="Id">
+
                 <div class="layui-form-item">
                     <label class="layui-form-label">文章标题</label>
                     <div class="layui-input-block">
@@ -64,10 +66,17 @@
                     </div>
                 </div>
 
-                <div class="layui-form-item">
+                <div id="create" class="layui-form-item">
                     <div class="layui-input-block">
                         <button class="layui-btn" id="fabu" lay-submit lay-filter="formDemo">发布</button>
                         <button class="layui-btn layui-btn-primary" id="caogao" lay-submit
+                            lay-filter="formDemo">存为草稿</button>
+                    </div>
+                </div>
+                <div id="update" style="display: none;" class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" id="update" lay-submit lay-filter="formDemo">修改</button>
+                        <button class="layui-btn layui-btn-primary" id="cun" lay-submit
                             lay-filter="formDemo">存为草稿</button>
                     </div>
                 </div>
@@ -79,7 +88,7 @@
     <script type="text/html" id="tpl-cate">
         <option value="">选择类别</option>
         {{each data}}
-        <option value="{{$value.Id}}">{{$value.name}}</option>
+        <option {{  $value.Id == cate_id?'selected':''}}  value="{{$value.Id}}">{{$value.name}}</option>
         {{/each}}
     </script>
 
@@ -93,6 +102,7 @@
     <script src="/assets/lib/template-web.js"></script>
     <script src="/assets/js/baseAPI.js"></script>
     <script src="/assets/js/article/art_pub.js"></script>
+    <script src="/assets/js/article/art_edit.js"></script>
 
 </body>
 
